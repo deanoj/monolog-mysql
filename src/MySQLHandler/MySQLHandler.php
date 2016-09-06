@@ -147,10 +147,12 @@ class MySQLHandler extends AbstractProcessingHandler
         ), $record['context']);
 
         //Fill content array with "null" values if not provided
+        /*
         $contentArray = $contentArray + array_combine(
             $this->additionalFields,
             array_fill(0, count($this->additionalFields), null)
         );
+        */
 
         // need to remove the scope key other PDO exception due to bound paramters
         unset($contentArray['scope']);
