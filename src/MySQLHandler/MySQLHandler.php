@@ -152,6 +152,9 @@ class MySQLHandler extends AbstractProcessingHandler
             array_fill(0, count($this->additionalFields), null)
         );
 
+        // need to remove the scope key other PDO exception due to bound paramters
+        unset($contentArray['scope']);
+
         $this->statement->execute($contentArray);
     }
 }
